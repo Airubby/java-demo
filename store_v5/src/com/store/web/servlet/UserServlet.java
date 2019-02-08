@@ -54,5 +54,22 @@ public class UserServlet extends BaseServlet {
 		return "/jsp/info.jsp";
 		
 	}
+	//active
+	public String active(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		//服务端获取到激活码,和数据库中已经存在的激活码对比,如果存在,激活成功,更改用户激活状态1,转发到登录页面,提示:激活成功,请登录.
+		String code=request.getParameter("code");
+		//调用业务层功能:根据激活码查询用户 select * from user where code=?
+		UserService UserService=new UserServiceImp();
+		boolean flag=UserService.userActive(code);
+		if(flag==true) {
+			//转发到登录页面,提示:激活成功,请登录
+			request.setAttribute("msg", "用户激活成功,请登录");
+			return "/jsp/login.jsp";
+		}else {
+			//转发到提示页面,提示:激活失败
+			request.setAttribute("msg", "用户激活成功,请登录");
+			return "/jsp/info.jsp";
+		}
+	}
 
 }
