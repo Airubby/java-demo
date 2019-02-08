@@ -12,4 +12,6 @@ public interface UserDao {
 
 	void updateUser(User user) throws SQLException;
 
+	User userLogin(User user) throws SQLException;
+
 }

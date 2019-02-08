@@ -71,5 +71,38 @@ public class UserServlet extends BaseServlet {
 			return "/jsp/info.jsp";
 		}
 	}
+	//loginUI
+	public String loginUI(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		return "/jsp/login.jsp";
+	}
+	//userLogin
+	public String userLogin(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		User user=new User();
+		MyBeanUtils.populate(user, request.getParameterMap());
+		//调用业务登录功能
+		UserService UserService=new UserServiceImp();
+		User user02=null;
+		try {
+			user02=UserService.userLogin(user);
+			//用户登录成功，将用户信息放入session
+			request.getSession().setAttribute("loginUser", user02);
+			response.sendRedirect(request.getContextPath()+"/index.jsp");
+			return null;
+		} catch (Exception e) {
+			// TODO: handle exception
+			String msg=e.getMessage();
+			System.out.println(msg);
+			request.setAttribute("msg", msg);
+			return "/jsp/login.jsp";
+		}
+	}
+	//logOut
+	public String logOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//用户退出,清空用户session
+		request.getSession().invalidate();
+		response.sendRedirect(request.getContextPath()+"/jsp/index.jsp");
+		return null;
+	}
 
 }
