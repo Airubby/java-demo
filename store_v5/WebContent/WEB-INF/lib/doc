@@ -1,0 +1,8 @@
+mysql驱动：mysql-connector-java-5.1.39-bin.jar
+c3p0连接池:c3p0-0.9.2-pre5.jar;mchange-commons-java-0.2.3.jar
+dbutils:commons-dbutils-1.4.jar
+beanutils:commons-beanutils-1.8.3.jar;commons-logging-1.1.1.jar
+fileupload:commons-fileupload-1.2.1.jar;commons-io-1.4.jar
+jstl标准标签库:jstl.jar;standard.jar
+邮件:mail.jar
+dom4j:jaxen-1.1-beta-6.jar;dom4j-1.6.1.jar
