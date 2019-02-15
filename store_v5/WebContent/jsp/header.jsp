@@ -57,10 +57,11 @@
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav">
-								<c:forEach items="${allCats }" var="c">
+							<ul class="nav navbar-nav" id="myUL">
+								<%-- <c:forEach items="${allCats }" var="c">
 								<li><a href="#">${c.cname }</a></li>
-								</c:forEach>
+								</c:forEach> --%>
+								<!-- 用另一种方法 -->
 							</ul>
 							<form class="navbar-form navbar-right" role="search">
 								<div class="form-group">
@@ -77,7 +78,20 @@
 			</div>
 
 </body>
-
+<script>
+$(function(){
+	$.post("${pageContext.request.contextPath}/CategoryServlet",{"method":"findAllCats"},function(dt){
+		// console.log(dt);
+		//<li><a href="#">${c.cname}</a></li>
+		//jquery遍历数据
+		$.each(dt,function(i,obj){
+			var li="<li><a href='${pageContext.request.contextPath}/ProductServlet?method=findProductsWithCidAndPage&num=1&cid="+obj.cid+"'>"+obj.cname+"</a></li>";
+			$("#myUL").append(li);
+		});		
+		
+	},"json");
+});
+</script>
 </html>
 
 

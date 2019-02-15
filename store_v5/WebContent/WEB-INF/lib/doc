@@ -6,3 +6,5 @@ fileupload:commons-fileupload-1.2.1.jar;commons-io-1.4.jar
 jstl标准标签库:jstl.jar;standard.jar
 邮件:mail.jar
 dom4j:jaxen-1.1-beta-6.jar;dom4j-1.6.1.jar
+json工具：commons-beanutils-1.8.3.jar;commons-collections-3.2.1.jar;commons-lang-2.5.jar;
+		commons-logging-1.1.1.jar;ezmorph-1.0.6.jar;json-lib-2.4-jdk15.jar;
