@@ -8,3 +8,4 @@ jstl标准标签库:jstl.jar;standard.jar
 dom4j:jaxen-1.1-beta-6.jar;dom4j-1.6.1.jar
 json工具：commons-beanutils-1.8.3.jar;commons-collections-3.2.1.jar;commons-lang-2.5.jar;
 		commons-logging-1.1.1.jar;ezmorph-1.0.6.jar;json-lib-2.4-jdk15.jar;
+jedis工具：jedis-2.7.0.jar;commons-pool2-2.3.jar;  (数据存内存中用)测试得启动redisbin_x64中的服务
