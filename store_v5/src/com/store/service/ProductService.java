@@ -10,4 +10,6 @@ public interface ProductService {
 
 	List<Product> findNews() throws Exception;
 
+	Product findProductByPid(String pid) throws Exception;
+
 }

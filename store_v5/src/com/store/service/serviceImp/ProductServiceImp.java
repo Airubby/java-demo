@@ -9,6 +9,13 @@ import com.store.service.ProductService;
 
 public class ProductServiceImp implements ProductService {
 	ProductDao productDao=new ProductDaoImp();
+	
+	@Override
+	public Product findProductByPid(String pid) throws Exception {
+		// TODO Auto-generated method stub
+		return productDao.findProductByPid(pid);
+	}
+
 	@Override
 	public List<Product> findHots() throws Exception {
 		// TODO Auto-generated method stub
