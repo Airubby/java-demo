@@ -2,6 +2,7 @@ package com.store.service;
 
 import java.util.List;
 
+import com.store.domain.PageModel;
 import com.store.domain.Product;
 
 public interface ProductService {
@@ -11,5 +12,7 @@ public interface ProductService {
 	List<Product> findNews() throws Exception;
 
 	Product findProductByPid(String pid) throws Exception;
+
+	PageModel findProductsByCidWithPage(String cid, int curNum) throws Exception;
 
 }

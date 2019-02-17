@@ -85,7 +85,7 @@ $(function(){
 		//<li><a href="#">${c.cname}</a></li>
 		//jquery遍历数据
 		$.each(dt,function(i,obj){
-			var li="<li><a href='${pageContext.request.contextPath}/ProductServlet?method=findProductsWithCidAndPage&num=1&cid="+obj.cid+"'>"+obj.cname+"</a></li>";
+			var li="<li><a href='${pageContext.request.contextPath}/ProductServlet?method=findProductsByCidWithPage&num=1&cid="+obj.cid+"'>"+obj.cname+"</a></li>";
 			$("#myUL").append(li);
 		});		
 		
